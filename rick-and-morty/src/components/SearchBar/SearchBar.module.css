@@ -1,0 +1,13 @@
+
+.button {
+    
+    background-color: white;
+}
+
+div button:hover {
+    cursor: pointer;
+}
+
+div input {
+background-color: black;
+} 

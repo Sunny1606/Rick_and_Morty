@@ -1,0 +1,7 @@
+.div {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgb(119, 110, 110)
+}
+div img:hover {
+  cursor: pointer;
+}
