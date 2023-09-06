@@ -1,21 +1,39 @@
 .div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(112, 82, 82)
-    
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: darkgoldenrod;
+  margin: 0;
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
 }
 
 .h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    color: white;
-    font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0;
 }
 
-.div img:hover {
-    cursor: pointer;
+.butonOnCloseContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
-   
+.onClose {
+  background-color: orangered;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: right;
+  margin: 0 10px;
+}
 
-
+.img {
+  border-radius: 8px;
+}

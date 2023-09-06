@@ -1,7 +1,8 @@
-.div {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: rgb(119, 110, 110)
+
+.container{
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-div img:hover {
-  cursor: pointer;
-}
+

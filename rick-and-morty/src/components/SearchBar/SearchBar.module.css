@@ -1,13 +1,18 @@
-
-.button {
-    
-    background-color: white;
-}
-
 div button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 div input {
-background-color: black;
-} 
+  background-color: white;
+  font-size: 15px;
+}
+
+.detector {  
+  background-color: bisque;
+  font-family:'Times New Roman', Times, serif;  
+  font-size: 15px;
+  margin: 0 10px;
+  border-radius: 8px;
+ display: inline-block;
+ text-align: right;
+}

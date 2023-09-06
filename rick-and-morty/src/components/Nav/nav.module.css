@@ -1,0 +1,38 @@
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.onSearch{
+    background-color: bisque;
+    font-family:'Times New Roman', Times, serif;  
+    font-size: 15px;
+    margin: 0 10px;
+    border-radius: 8px;
+   display: inline-block;
+   text-align: right;
+}
+
+.home{
+    display: inline-block;
+    color: aliceblue;
+    margin-right:50px;
+    
+   
+}
+.about{
+    display: inline-block;
+    color: aliceblue;
+    margin-right: auto;
+   
+}
+
+h2{
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    color:aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
