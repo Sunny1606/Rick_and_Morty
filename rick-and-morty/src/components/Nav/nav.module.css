@@ -27,6 +27,11 @@
     margin-right: auto;
    
 }
+.favorites{
+    display: inline-block;
+    color: aliceblue;
+    margin-right: 700px;
+}
 
 h2{
     color: aliceblue;

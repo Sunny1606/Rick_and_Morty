@@ -1,14 +1,50 @@
 /* eslint-disable react/prop-types */
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
+import { addFav, removeFav } from "../../redux/actions";
+import { connect } from "react-redux";
+import { useState, useEffect } from "react";
 
-export default function Card({ id, name, species, gender, image, onClose }) {
+// eslint-disable-next-line react-refresh/only-export-components
+const Card = (props) => {
+  const {
+    id,
+    name,
+    species,
+    gender,
+    image,
+    onClose,
+    addFav,
+    removeFav,
+    myFavorites,
+  } = props;
+
+  const [isFav, setIsFav] = useState(false);
+
+  const handleFavorite = () => {
+    isFav ? removeFav(id) : addFav(props);
+    setIsFav(!isFav);
+  };
+
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+      if (fav.id === props.id) {
+        setIsFav(true);
+      }
+    });
+  }, [myFavorites]);
+
   return (
     <div className={styles.div}>
+      {isFav ? (
+        <button onClick={handleFavorite} className={styles.btnRed}>❤️</button>
+      ) : (
+        <button onClick={handleFavorite} className={styles.btnWhite}>🤍</button>
+      )}
       <div className={styles.butonOnCloseContainer}>
-      <button onClick={() => onClose(id)} className={styles.onClose}>
-        X
-      </button>
+        <button onClick={() => onClose(id)} className={styles.onClose}>
+          X
+        </button>
       </div>
       <Link to={`/Detail/${id}`}>
         <h2>{name}</h2>
@@ -19,4 +55,24 @@ export default function Card({ id, name, species, gender, image, onClose }) {
       <img src={image} alt="" className={styles.img} />
     </div>
   );
-}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addFav: (character) => {
+      dispatch(addFav(character));
+    },
+    removeFav: (id) => {
+      dispatch(removeFav(id));
+    },
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    myFavorites: state.myFavorites,
+  };
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

@@ -7,6 +7,7 @@ import Form from "./components/Form/form.jsx";
 import Details from "./components/Details/detail.jsx";
 import About from "./components/About/about.jsx";
 import PATHROUTES from "./components/Helpers/pathRouters.js";
+import Favorites from './components/Favorites/favorites.jsx'
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={hndleOnClose}/>}/>
           <Route path={PATHROUTES.ABOUT} element={<About/>}/>
           <Route path={PATHROUTES.DETAIL} element={<Details/>}/>
+          <Route path={PATHROUTES.FAVORITES} element={<Favorites/>}/>
         </Routes>
       </div>
     </div>
