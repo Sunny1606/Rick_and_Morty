@@ -37,14 +37,18 @@ const Card = (props) => {
   return (
     <div className={styles.div}>
       {isFav ? (
-        <button onClick={handleFavorite} className={styles.btnRed}>❤️</button>
+        <button onClick={handleFavorite} className={styles.btnRed}>
+          ❤️
+        </button>
       ) : (
-        <button onClick={handleFavorite} className={styles.btnWhite}>🤍</button>
+        <button onClick={handleFavorite} className={styles.btnWhite}>
+          🤍
+        </button>
       )}
       <div className={styles.butonOnCloseContainer}>
-        <button onClick={() => onClose(id)} className={styles.onClose}>
-          X
-        </button>
+
+        {location.pathname !== "/favorites" && <button className={styles.onClose} onClick={() => onClose(id)}  >X</button>}
+      
       </div>
       <Link to={`/Detail/${id}`}>
         <h2>{name}</h2>
