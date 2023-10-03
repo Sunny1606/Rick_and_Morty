@@ -9,7 +9,7 @@ let postFav = (req, res) => {
 
 let deleteFav = (req, res) => {
   const { id } = req.params;
-  myFavorites = myFavorites.filter((char) => char.id !== +id);  //retornamos los personajes qe sean dif al id y asi tendriamos el array de todos lo que no sean diferentes 
+  myFavorites = myFavorites.filter((char) => char.id !== id);  //retornamos los personajes qe sean dif al id y asi tendriamos el array de todos lo que no sean diferentes 
   return res.status(200).json(myFavorites);
 };
 
