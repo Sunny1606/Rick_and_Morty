@@ -35,7 +35,7 @@ const Card = (props) => {
   }, [myFavorites]);
 
   return (
-    <div className={styles.div}>
+    <div className={styles.card}>
       {isFav ? (
         <button onClick={handleFavorite} className={styles.btnRed}>
           ❤️

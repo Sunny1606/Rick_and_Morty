@@ -10,7 +10,7 @@
     justify-content: center;
 }
 form{
-    background-color: rgb(123, 238, 238);
+    background-color: orangered;
     display: flex;
     justify-content: center;
     flex-direction: column;

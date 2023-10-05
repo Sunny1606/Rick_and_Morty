@@ -14,23 +14,19 @@ export default function Nav({ onSearch }) {
       </button>
       <SearchBar onSearch={onSearch} className={styles.SearchBar} />
 
-      <button className={styles.btnHome}>
-        <Link to={PATHROUTES.HOME}>
-          Home
-        </Link>
-      </button>
+      <div className={styles.links}>
+        <button className={styles.button}>
+          <Link className={styles.links} to={PATHROUTES.HOME}>Home</Link>
+        </button>
 
-      <button className={styles.btnAbout}>
-        <Link to={PATHROUTES.ABOUT}>
-          About
-        </Link>
-      </button>
+        <button className={styles.button}>
+          <Link className={styles.links} to={PATHROUTES.ABOUT}>About</Link>
+        </button>
 
-      <button className={styles.btnFavorites}>
-        <Link to={PATHROUTES.FAVORITES}>
-          Favorites
-        </Link>
-      </button>
+        <button className={styles.button}>
+          <Link className={styles.links} to={PATHROUTES.FAVORITES}>Favorites</Link>
+        </button>
+      </div>
     </div>
   );
 }

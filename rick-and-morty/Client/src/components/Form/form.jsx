@@ -36,7 +36,7 @@ const Form = (props) => {
           <input
             name="email"
             type="text"
-            placeholder="email..."
+            
             value={userData.email}
             onChange={handleChange}
           />
@@ -55,7 +55,7 @@ const Form = (props) => {
           <input
             name="password"
             type=""
-            placeholder="password..."
+          
             value={userData.password}
             onChange={handleChange}
           />
