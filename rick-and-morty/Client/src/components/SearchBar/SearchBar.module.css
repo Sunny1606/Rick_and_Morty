@@ -7,22 +7,19 @@ div input {
   font-size: 15px;
   outline: none;
   height: 30px;
- padding: 0 10px;
+ padding: 1 10px;
  font-weight: 400;
 }
 
 .agregar {  
-  background-color: white ;
-  font-family:'Times New Roman', Times, serif;  
-  font-size: 15px;
-  margin: 0 10px;
-  border-radius: 8px;
- display: inline-block;
- text-align: right;
  height: 35px;
  padding: 0 10px;
  font-weight: 500;
+ cursor: pointer;
+ background-color: white;
+ border-radius: 1px;
 }
-.detector :hover{
-  background-color: greenyellow;
+
+.agregar:hover{
+  background-color: brown;
 }

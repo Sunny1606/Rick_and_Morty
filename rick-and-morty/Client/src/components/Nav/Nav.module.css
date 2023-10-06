@@ -1,17 +1,18 @@
 .nav {
   display: flex;
   justify-content: flex-end;
-  padding: 30px;
+  padding: 15px;
+  background-color: rgb(172, 166, 166);
+  margin-bottom: 15px;
 }
 
 .onSearch {
-  background-color: white;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 15px;
-  margin: 0 10px;
-  border-radius: 8px;
-  display: inline-block;
-  text-align: right;
+ height: 35px;
+ padding: 0 10px;
+ font-weight: 500;
+ cursor: pointer;
+ background-color: white;
+ border-radius: 1px;
 }
 
 .links {
@@ -19,6 +20,9 @@
   height: 100%;
   padding: 0 10px;
   font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  
 }
 
 .button {
@@ -26,8 +30,8 @@
   padding: 0 10px;
   font-weight: 500;
   cursor: pointer;
-  border: 1px solid black;
   background-color: white;
+  border-radius: 1px;
 }
 
 h2 {
@@ -41,4 +45,8 @@ h1 {
 
 .links :hover {
   background-color: greenyellow;
+}
+
+.onSearch:hover{
+  background-color: brown;
 }

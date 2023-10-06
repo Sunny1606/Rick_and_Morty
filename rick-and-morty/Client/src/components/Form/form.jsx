@@ -32,14 +32,13 @@ const Form = (props) => {
         </div>
         <div className={form}>
           <div className={style.userContainer}>
-          <label htmlFor="">Email: </label>
-          <input
-            name="email"
-            type="text"
-            
-            value={userData.email}
-            onChange={handleChange}
-          />
+            <label htmlFor="">Email: </label>
+            <input
+              name="email"
+              type="text"
+              value={userData.email}
+              onChange={handleChange}
+            />
           </div>
           {errors.e1 ? (
             <p>{errors.e1}</p>
@@ -51,14 +50,13 @@ const Form = (props) => {
         </div>
         <div className={form}>
           <div className={style.passwordContainer}>
-          <label htmlFor="">Password: </label>
-          <input
-            name="password"
-            type=""
-          
-            value={userData.password}
-            onChange={handleChange}
-          />
+            <label htmlFor="">Password: </label>
+            <input
+              name="password"
+              type=""
+              value={userData.password}
+              onChange={handleChange}
+            />
           </div>
           {errors.p1 ? <p>{errors.p1}</p> : <p>{errors.p2}</p>}
         </div>

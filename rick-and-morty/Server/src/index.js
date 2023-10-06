@@ -1,6 +1,7 @@
 const express = require("express");
 const router = require('./routers/index');
 
+//middlewares 
 const server = express();
 const PORT = 3001;
 
