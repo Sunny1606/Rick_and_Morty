@@ -12,15 +12,7 @@ import Favorites from "./components/Favorites/favorites.jsx";
 function App() {
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
-  // const email = "";
-  // const password = "";
 
-  // function login(userData) {
-  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
-  //     setAccess(true);
-  //     navigate("/home");
-  //   }
-  // }
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
@@ -39,14 +31,7 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-    //PROMISES
-    // const { email, password } = userData;
-    // const URL = "http://localhost:3001/rickandmorty/login";
-    // axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-    //   const { access } = data;
-    //   setAccess(data);
-    //   access && navigate("/home");
-    // });
+
   }
 
   const { pathname } = useLocation();
@@ -67,21 +52,9 @@ function App() {
       console.log(error);
     }
   };
-  //PROMISES
-  // function handleSearch(id) {
-  //   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-  //     ({ data }) => {
-  //       if (data.name) {
-  //         setCharacters([...characters, data]);
-  //       } else {
-  //         window.alert("No hay personajes con este ID");
-  //       }
-  //     }
-  //   );
-  // }
 
   const hndleOnClose = (id) => {
-    const filtro = characters.filter((ch) => ch.id !== (id));
+    const filtro = characters.filter((ch) => ch.id !== id);
     setCharacters(filtro);
   };
 
@@ -105,3 +78,4 @@ function App() {
 }
 
 export default App;
+
