@@ -1,5 +1,7 @@
 const express = require("express");
 const router = require('./routers/index');
+const { conn } = require("./DB_connection");
+
 
 //middlewares 
 const server = express();
@@ -21,6 +23,9 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use("/rickandmorty" , router);
 
-server.listen(PORT, () => {
-  console.log(`Server listen into ${PORT}`);
+conn.sync({force: true}).then(()=>{
+  server.listen(PORT, () => {
+    console.log(`Server listen into ${PORT}`);
+  });
 });
+
