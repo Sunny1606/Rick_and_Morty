@@ -1,14 +1,30 @@
-//GET LOGIN
-const users = require("../utils/users");
+//Ahora si crearemos un controlador que valide la información de nuestra base de datos.
 
-const login = (req, res) => {
+const { User } = require("../models/User");
+
+const login = async (req, res) => {
   const { email, password } = req.query;
-  let access = false;
 
-  //si hay un usuario que coincide con el email y contraseña
-  users.find((user) => email === user.email && password === user.password)
-    ? res.status(200).json({ access: true })
-    : res.status(200).json({ access: false });
+  if (!email || !password) {
+    res.status(404).json({ message: "Faltan datos" });
+  }
+  try {
+    // Busca un usuario por su email
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+
+    // Compara la contraseña proporcionada con la contraseña del usuario
+    if (user.password !== password) {
+      return res.status(403).json({ message: "Contraseña incorrecta" });
+    }
+
+    // Si las contraseñas coinciden, responde con acceso exitoso
+    return res.status(200).json({ access: true });
+  } catch (error) {
+    res.status(500).json({ error: message });
+  }
 };
-
-module.exports = login;
+module.exports = { login };
