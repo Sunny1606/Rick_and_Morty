@@ -2,25 +2,19 @@
 const { User } = require("../DB_connection");
 
 const postUser = async (req, res) => {
-  const { email, password } = req.body;
-
-  if (!email || !password) {
-    res.status(400).json({ message: "Faltan datos" });
-  }
-
   try {
-    const [user, created] = await User.findOrCreate({
-      where: { email },
-      defaults: { password },
+    const { email, password } = req.body;
+  
+    if (!email || !password) {
+      return res.status(400).send("Faltan datos");
+    }
+    const user = await User.findOrCreate({
+      where: { email , password },
+      // defaults: { password },
     });
 
-    if (created) {
-      return res
-        .status(201)
-        .json({ message: "Usuario creado correctamente", user });
-    }
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json(error.message);
   }
 };
 

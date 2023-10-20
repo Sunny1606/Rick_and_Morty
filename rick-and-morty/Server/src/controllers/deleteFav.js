@@ -2,11 +2,10 @@ const { Favorite } = require("../DB_connection");
 
 
 const deleteFav = async (req,res) => {
-    const {id} = req.query; 
-    if (!id) {
-        return res.status(400).json({ message: "Falta el ID del personaje a eliminar" });
-      }
+    
     try {
+        const {id} = req.params; 
+        
         await Favorite.destroy({
             where: {id}
         });
@@ -15,8 +14,14 @@ const deleteFav = async (req,res) => {
         return res.status(200).json(allFavorites);
 
     } catch (error) {
-        res.status(500).json({ message: error.message});
+       return res.status(500).json(error.message);
     }
 }
 
 module.exports = deleteFav;
+
+
+
+// if (!id) {
+//     return res.status(400).json({ message: "Falta el ID del personaje a eliminar" });
+//   }

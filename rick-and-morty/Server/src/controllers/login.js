@@ -3,27 +3,27 @@
 const { User } = require("../DB_connection");
 
 const login = async (req, res) => {
-  const { email, password } = req.query;
-
-  if (!email || !password) {
-    res.status(404).json({ message: "Faltan datos" });
-  }
   try {
+    const { email, password } = req.query;
+  
+    if (!email || !password) 
+      return res.status(404).send("Faltan datos" );
+    
     // Busca un usuario por su email
     const user = await User.findOne({ where: { email } });
 
-    if (!user) {
-      return res.status(404).json({ message: "Usuario no encontrado" });
-    }
-
+    if (!user) 
+      return res.status(404).send("Usuario no encontrado");
+    
     // Compara la contraseña proporcionada con la contraseña del usuario
-    if (user.password !== password) {
-      return res.status(403).json({ message: "Contraseña incorrecta" });
-    }
-    // Si las contraseñas coinciden, responde con acceso exitoso
-    return res.status(200).json({ access: true });
+    if (user.password === password) 
+      return res.status(200).json({ access: true });
+    
+    
+    return res.status(403).send("Contraseña incorrecta" );
+    
   } catch (error) {
-    res.status(500).json({ error: error.message });
+   return res.status(500).json(error.message);
   }
 };
 module.exports = login ;
