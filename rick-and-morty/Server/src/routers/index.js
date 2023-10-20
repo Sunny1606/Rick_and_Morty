@@ -12,7 +12,7 @@ const deleteFav = require("../controllers/deleteFav");
 
 router.get("/character/:id", getCharById);
 router.get("/login" , login); 
-router.post("/login", postUser);
+router.post("/user", postUser);
 router.post("/fav", postFav);
 router.delete("/fav/:id", deleteFav);
 
