@@ -1,5 +1,4 @@
 const { Favorite } = require("../DB_connection");
-const favorite = require ("../models/Favorite");
 
 
 const deleteFav = async (req,res) => {

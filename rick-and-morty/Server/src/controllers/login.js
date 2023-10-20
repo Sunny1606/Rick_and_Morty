@@ -1,6 +1,6 @@
 //Ahora si crearemos un controlador que valide la información de nuestra base de datos.
 
-const { User } = require("../models/User");
+const { User } = require("../DB_connection");
 
 const login = async (req, res) => {
   const { email, password } = req.query;
@@ -20,11 +20,10 @@ const login = async (req, res) => {
     if (user.password !== password) {
       return res.status(403).json({ message: "Contraseña incorrecta" });
     }
-
     // Si las contraseñas coinciden, responde con acceso exitoso
     return res.status(200).json({ access: true });
   } catch (error) {
-    res.status(500).json({ error: message });
+    res.status(500).json({ error: error.message });
   }
 };
-module.exports = { login };
+module.exports = login ;

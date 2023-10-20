@@ -1,5 +1,5 @@
-const { Model } = require("sequelize");
-const Favorite = require("../models/Favorite");
+// const { Model } = require("sequelize");
+const {Favorite} = require("../DB_connection");
 
 const postFav = async (req, res) => {
   const { name, origin, status, image, species, gender } = req.body;
