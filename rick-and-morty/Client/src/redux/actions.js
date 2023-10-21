@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const addFav = (character) => {
   const endpoint = "http://localhost:3001/rickandmorty/fav";
+  console.log(character);
   return async (dispatch) => {
     try {
       const { data } = await axios.post(endpoint, character);

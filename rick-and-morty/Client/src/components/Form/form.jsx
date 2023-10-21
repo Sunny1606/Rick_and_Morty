@@ -53,9 +53,10 @@ const Form = (props) => {
             <label htmlFor="">Password: </label>
             <input
               name="password"
-              type=""
+              type="password"
               value={userData.password}
               onChange={handleChange}
+
             />
           </div>
           {errors.p1 ? <p>{errors.p1}</p> : <p>{errors.p2}</p>}

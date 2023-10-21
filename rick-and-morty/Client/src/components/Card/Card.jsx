@@ -2,29 +2,42 @@
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions";
-import { connect } from "react-redux";
+import { connect ,  useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Card = (props) => {
+  const dispatch = useDispatch();
   const {
     id,
     name,
     species,
+    origin,
     gender,
     image,
+    status,
     onClose,
-    addFav,
-    removeFav,
     myFavorites,
   } = props;
+  console.log(status);
 
   const [isFav, setIsFav] = useState(false);
 
+  // const handleFavorite = () => {
+  //   isFav ? removeFav(id) : addFav(props);
+  //   setIsFav(!isFav);
+  // };
+
   const handleFavorite = () => {
-    isFav ? removeFav(id) : addFav(props);
-    setIsFav(!isFav);
-  };
+    if (isFav) {
+        dispatch(removeFav(id));
+        setIsFav(!isFav);
+    }
+    else {
+        dispatch(addFav({id, name, species, origin, gender, image, status }));
+        setIsFav(!isFav);
+    }
+};
 
   useEffect(() => {
     myFavorites.forEach((fav) => {
@@ -55,7 +68,7 @@ const Card = (props) => {
       </Link>
       <h2 className={styles.h2}>{species}</h2>
       <h2 className={styles.h2}>{gender}</h2>
-      <h2 className={styles.h2}>{origin.name}</h2>
+      <h2 className={styles.h2}>{origin && origin.name}</h2>
       <img src={image} alt="" className={styles.img} />
     </div>
   );
